@@ -89,7 +89,8 @@ h6 {
 }
 
 #header .logo img {
-  max-height: 120px;
+  max-height: 80px;
+  padding-right: 50px;
 }
 
 #header.header-scrolled,
