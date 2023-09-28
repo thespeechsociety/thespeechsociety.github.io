@@ -432,7 +432,7 @@ h6 {
   border: 2px solid #fff;
   color: #fff;
   margin: 0px 10px 0px 10px;
-  
+
 }
 
 #hero .btn-get-started:hover {
@@ -577,6 +577,10 @@ section {
   background: #606060;
   color: #fff;
   text-decoration: none;
+}
+
+.about .desc{
+  text-align: justify;
 }
 
 /*--------------------------------------------------------------
@@ -1395,20 +1399,20 @@ section {
 }
 
 .entries {
-padding: 0px 110px;
-display: flex	;
-flex-wrap: wrap;
-margin: auto;
+  padding: 0px 110px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
 }
 
 @media (max-width: 992px) {
-  .entries{
+  .entries {
     padding: 25px;
 
   }
 }
 
-.first-blog{
+.first-blog {
   width: 1000px;
 }
 
@@ -1417,7 +1421,7 @@ margin: auto;
   margin: auto;
   margin-bottom: 50px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;  
+  border-radius: 10px;
 
 }
 
@@ -1484,6 +1488,8 @@ margin: auto;
 
 .blog .entry .entry-content p {
   line-height: 24px;
+  text-align: justify;
+
 }
 
 .blog .entry .entry-content .read-more {
