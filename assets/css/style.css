@@ -1469,9 +1469,13 @@ section {
   margin: 0;
 }
 
-.blog .entry .entry-meta ul li+li {
-  padding-left: 20px;
+.blog .entry .entry-meta ul li {
+  padding: 4px 10px 2px 0;
 }
+
+/* .blog .entry .entry-meta ul li+li {
+  padding-left: 20px;
+} */
 
 .blog .entry .entry-meta i {
   font-size: 16px;
@@ -1931,9 +1935,15 @@ section {
 }
 
 .blog-sub-head{
-  padding-top: 15px;
-  font-size: 18px;
+  padding-top: 18px;
+  font-size: 20px;
   font-weight: bold;
+}
+
+.blog-sub-head-2{
+  padding-top: 5px;
+  font-size: 18px;
+  font-weight:800;
 }
 
 /*--------------------------------------------------------------
