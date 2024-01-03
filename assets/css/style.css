@@ -710,6 +710,7 @@ section {
   position: relative;
   background: #fff;
   border-radius: 10px;
+  min-height: 400px;
 }
 
 .testimonials .testimonial-item .testimonial-img {
@@ -809,6 +810,10 @@ section {
 
 .recent-blog-posts .post-item .post-img img {
   transition: 0.5s;
+}
+
+.testim-img{
+  border-radius: 5px;
 }
 
 .recent-blog-posts .post-item .post-date {
