@@ -579,7 +579,7 @@ section {
   text-decoration: none;
 }
 
-.about .desc{
+.about .desc {
   text-align: justify;
 }
 
@@ -1425,6 +1425,12 @@ section {
 
 }
 
+@media (max-width:732px) {
+  .blog .entry {
+    padding: 25px;
+  }
+}
+
 .blog .entry .entry-img {
   max-height: 440px;
   width: 100%;
@@ -1934,16 +1940,16 @@ section {
   font-size: 14px;
 }
 
-.blog-sub-head{
+.blog-sub-head {
   padding-top: 18px;
   font-size: 20px;
   font-weight: bold;
 }
 
-.blog-sub-head-2{
+.blog-sub-head-2 {
   padding-top: 5px;
   font-size: 18px;
-  font-weight:800;
+  font-weight: 800;
 }
 
 /*--------------------------------------------------------------
