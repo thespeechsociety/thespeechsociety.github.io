@@ -305,7 +305,7 @@ new Swiper('.slides-3', {
   }
 });
 
-// Event Dashboard
+// Stats Dashboard
 
 document.addEventListener("DOMContentLoaded", () => {
   function counter(id, start, end, duration) {
