@@ -9,7 +9,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif; 
+  font-family: "Open Sans", sans-serif;
   color: #444444;
 }
 
@@ -588,11 +588,13 @@ section {
 --------------------------------------------------------------*/
 section {
   overflow: hidden;
-  padding: 60px 0; /* Adjusted padding */
+  padding: 60px 0;
+  /* Adjusted padding */
 }
 
 .section-bg {
-  background-color: white; /* Changed background color */
+  background-color: white;
+  /* Changed background color */
 }
 
 .section-header {
@@ -603,7 +605,8 @@ section {
 .section-header h2 {
   font-size: 13px;
   letter-spacing: 1px;
-  font-weight: 700; /* Changed font weight */
+  font-weight: 700;
+  /* Changed font weight */
   padding: 8px 20px;
   line-height: 1;
   margin: 0;
@@ -645,7 +648,8 @@ section {
 
 .events .event-item {
   background-size: cover;
-  background-position: center; /* Corrected typo */
+  background-position: center;
+  /* Corrected typo */
   min-height: 600px;
   padding: 30px;
 }
@@ -687,7 +691,7 @@ section {
 }
 
 @media (min-width: 1200px) {
-  .events .swiper-slide-active + .swiper-slide {
+  .events .swiper-slide-active+.swiper-slide {
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     border-right: 1px solid rgba(255, 255, 255, 0.5);
     z-index: 1;
@@ -702,12 +706,14 @@ section {
 .events .swiper-pagination .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background-color: #808080; /* Grey color for inactive state */
+  background-color: #808080;
+  /* Grey color for inactive state */
   opacity: 1;
 }
 
 .events .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #000; /* Black color for active state */
+  background-color: #000;
+  /* Black color for active state */
 }
 
 .my-button {
@@ -717,7 +723,8 @@ section {
   line-height: 1;
   transition: 0.3s;
   color: white;
-  position: relative; /* Add position relative */
+  position: relative;
+  /* Add position relative */
 }
 
 .my-button i {
@@ -731,14 +738,17 @@ section {
 }
 
 .my-button:hover {
-  color: grey; /* Grey color on hover */
-  
-  z-index: 1; /* Ensure the box is on top of other content */
+  color: grey;
+  /* Grey color on hover */
+
+  z-index: 1;
+  /* Ensure the box is on top of other content */
 }
 
 
 .my-hr {
-  border-color: #fff; /* White color for hr */
+  border-color: #fff;
+  /* White color for hr */
 }
 
 
@@ -935,12 +945,14 @@ section {
 .testimonials .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: grey; /* Set default color for inactive bullets */
+  background-color: grey;
+  /* Set default color for inactive bullets */
   opacity: 1;
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: black; /* Set color for active bullet */
+  background-color: black;
+  /* Set color for active bullet */
 }
 
 @media (max-width: 767px) {
@@ -959,6 +971,33 @@ section {
   }
 }
 
+/*--------------------------------------------------------------
+# Stats Dashboard
+--------------------------------------------------------------*/
+
+.statsboard {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/img/team/stats-dash.jpg) center center;
+  background-size: cover;
+  padding: 100px 0;
+}
+
+.stats-value {
+  font-family: 'Anton', sans-serif;
+  font-size: 60px;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+}
+
+.stats-value div {
+  align-self: center;
+}
+
+.stats-item {
+  text-align: center;
+  color: #ffffffbe;
+  padding: 20px 0px;
+}
 
 /*--------------------------------------------------------------
 # Recent Blog Posts Section
@@ -972,7 +1011,7 @@ section {
   transition: 0.5s;
 }
 
-.testim-img{
+.testim-img {
   border-radius: 5px;
 }
 
