@@ -335,7 +335,7 @@ onVisible(document.querySelector("#statsboard"), () => {
       }, step);
   }
   counter("count1", 0, 7, 3000);
-  counter("count2", 0, 700, 1800);
+  counter("count2", 0, 750, 1800);
   counter("count3", 0, 300, 3000);
   counter("count4", 0, 60, 3000);
 });
@@ -361,7 +361,7 @@ onVisible(document.querySelector("#statsboard"), () => {
 //       }, step);
 //   }
 //   counter("count1", 0, 7, 3000);
-//   counter("count2", 0, 700, 1800);
+//   counter("count2", 0, 750, 1800);
 //   counter("count3", 0, 300, 3000);
 //   counter("count4", 0, 60, 3000);
 // });
