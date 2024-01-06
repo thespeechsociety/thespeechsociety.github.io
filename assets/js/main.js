@@ -365,3 +365,56 @@ onVisible(document.querySelector("#statsboard"), () => {
 //   counter("count3", 0, 300, 3000);
 //   counter("count4", 0, 60, 3000);
 // });
+
+//testimonial
+function toggleTestimonial(element) {
+  var testimonialItem = element.closest('.testimonial-item');
+  var expandedContent = testimonialItem.querySelector('.testimonial-expanded-content');
+  var defaultContent = testimonialItem.querySelector('.default-content');
+  var readMoreLink = testimonialItem.querySelector('.read-more');
+
+  if (expandedContent.style.display === 'none' || expandedContent.style.display === '') {
+      expandedContent.style.display = 'block';
+      defaultContent.style.display = 'none';
+      readMoreLink.innerHTML = 'Read Less...';
+  } else {
+      expandedContent.style.display = 'none';
+      defaultContent.style.display = 'block';
+      readMoreLink.innerHTML = 'Read More...';
+  }
+}
+
+
+
+/**
+     * Init swiper slider with 2 slides at once in desktop view
+     */
+new Swiper('.slides-2', {
+  speed: 600,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  slidesPerView: 'auto',
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20
+    },
+
+    1200: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    }
+  }
+});
