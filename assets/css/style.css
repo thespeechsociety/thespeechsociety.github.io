@@ -1020,10 +1020,23 @@ section {
   box-sizing: content-box;
   padding: 30px 30px 30px 60px;
   margin: 0 15px 30px 0;
-  min-height: 325px;
   box-shadow: 0px 2px 20px rgba(82, 86, 94, 0.1);
   position: relative;
   background: #fff;
+}
+
+/* For desktop */
+@media only screen and (min-width: 768px) {
+  .testimonials .testimonial-item {
+    min-height: 325px;
+  }
+}
+
+/* For mobile */
+@media only screen and (max-width: 767px) {
+  .testimonials .testimonial-item {
+    min-height: 550px;
+  }
 }
 
 .testimonials .testimonial-item .testimonial-img {
