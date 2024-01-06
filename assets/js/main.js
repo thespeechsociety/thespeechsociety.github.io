@@ -307,7 +307,19 @@ new Swiper('.slides-3', {
 
 // Stats Dashboard
 
-document.addEventListener("DOMContentLoaded", () => {
+function onVisible(element, callback) {
+  new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.intersectionRatio > 0) {
+        callback(element);
+        observer.disconnect();
+      }
+    });
+  }).observe(element);
+  if(!callback) return new Promise(r => callback=r);
+}
+
+onVisible(document.querySelector("#statsboard"), () => {
   function counter(id, start, end, duration) {
     let obj = document.getElementById(id),
       now = start,
@@ -327,3 +339,29 @@ document.addEventListener("DOMContentLoaded", () => {
   counter("count3", 0, 300, 3000);
   counter("count4", 0, 60, 3000);
 });
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+  
+  
+// });
+// document.addEventListener("DOMContentLoaded", () => {
+//   function counter(id, start, end, duration) {
+//     let obj = document.getElementById(id),
+//       now = start,
+//       range = end - start,
+//       increment = end > start ? 1 : -1,
+//       step = Math.abs(Math.floor(duration / range)),
+//       timer = setInterval(() => {
+//         now += increment;
+//         obj.textContent = now;
+//         if (now == end) {
+//           clearInterval(timer);
+//         }
+//       }, step);
+//   }
+//   counter("count1", 0, 7, 3000);
+//   counter("count2", 0, 700, 1800);
+//   counter("count3", 0, 300, 3000);
+//   counter("count4", 0, 60, 3000);
+// });
