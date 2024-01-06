@@ -976,7 +976,7 @@ section {
 --------------------------------------------------------------*/
 
 .statsboard {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/img/team/stats-dash.jpg) center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/img/team/stats_dash.jpg) center center;
   background-size: cover;
   padding: 100px 0;
 }
