@@ -418,3 +418,29 @@ new Swiper('.slides-2', {
     }
   }
 });
+
+//faq starts
+
+// Assuming you have a function to toggle the open and close state of the FAQ items
+function toggleFAQ(item) {
+  // Toggle the open class on the clicked item
+  item.classList.toggle('open');
+}
+
+// Assuming you have some code to handle click events on the FAQ items
+document.querySelectorAll('.faq .faq-list .question').forEach(function(item) {
+  item.addEventListener('click', function() {
+    toggleFAQ(this);
+
+    // Remove the open class from other FAQ items
+    const otherFAQItems = document.querySelectorAll('.faq .faq-list .question');
+    otherFAQItems.forEach(function(otherItem) {
+      if (otherItem !== item) {
+        otherItem.classList.remove('open');
+      }
+    });
+  });
+});
+
+
+//faq ends
