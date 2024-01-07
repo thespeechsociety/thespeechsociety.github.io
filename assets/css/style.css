@@ -687,6 +687,7 @@ section {
   margin-bottom: 0;
   color: rgba(255, 255, 255, 0.9);
   position: relative;
+  text-align: justify; /* Add this line to make the text justified */
 }
 
 @media (min-width: 1200px) {
@@ -1093,6 +1094,7 @@ section {
 .testimonials .testimonial-item p {
   font-style: italic;
   margin: 15px auto 15px auto;
+  text-align: justify; /* Add this line to make the text justified */
 }
 
 .testimonials .swiper-pagination {
