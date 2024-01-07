@@ -340,6 +340,17 @@ onVisible(document.querySelector("#statsboard"), () => {
   counter("count4", 0, 60, 3000);
 });
 
+window.addEventListener(
+  "scroll",
+  () => {
+    document.body.style.setProperty(
+      "--scroll",
+      window.scrollY / (document.body.offsetHeight - window.innerHeight)
+    );
+  },
+  false
+);
+
 
 // document.addEventListener("DOMContentLoaded", () => {
   
