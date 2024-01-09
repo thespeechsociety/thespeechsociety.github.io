@@ -687,6 +687,7 @@ section {
   margin-bottom: 0;
   color: rgba(255, 255, 255, 0.9);
   position: relative;
+  text-align: justify; /* Add this line to make the text justified */
 }
 
 @media (min-width: 1200px) {
@@ -1035,7 +1036,7 @@ section {
 /* For mobile */
 @media only screen and (max-width: 767px) {
   .testimonials .testimonial-item {
-    min-height: 550px;
+    min-height: 570px;
   }
 }
 
@@ -1093,6 +1094,7 @@ section {
 .testimonials .testimonial-item p {
   font-style: italic;
   margin: 15px auto 15px auto;
+  text-align: justify; /* Add this line to make the text justified */
 }
 
 .testimonials .swiper-pagination {
@@ -1153,20 +1155,19 @@ section {
 
 @keyframes slideAnimation {
   0% {
-    background-position: 0% 50%;
+    background-position: 0% 40%;
   }
   80%{
-    background-position: 0% 50%;
+    background-position: 0% 40%;
   } 
   /*change values between 0% and 100% to speed up animation*/
   95%{
-    background-position: 100% 50%;
+    background-position: 100% 40%;
   }
   100% {
-    background-position: 100% 50%;
+    background-position: 100% 40%;
   }
 }
-
 
 .stats-value {
   font-family: 'Anton', sans-serif;
@@ -1632,7 +1633,7 @@ section {
   font-weight: 400;
   padding-left: 25px;
   cursor: pointer;
-  color: #d01d3f;
+  color: #71797E;
   transition: 0.3s;
 }
 
@@ -1646,6 +1647,7 @@ section {
 .faq .faq-list p {
   margin-bottom: 0;
   padding: 10px 0 0 25px;
+  text-align: justify;
 }
 
 .faq .faq-list .icon-show {
@@ -1674,6 +1676,11 @@ section {
   .faq .container {
     padding: 0 120px;
   }
+}
+
+/* Add this style for bold when open */
+.faq .faq-list .question.open {
+  font-weight: bold;
 }
 
 /*--------------------------------------------------------------
