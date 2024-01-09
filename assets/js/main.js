@@ -430,6 +430,7 @@ new Swiper('.slides-2', {
   }
 });
 
+
 //faq starts
 
 // Assuming you have a function to toggle the open and close state of the FAQ items
@@ -455,3 +456,18 @@ document.querySelectorAll('.faq .faq-list .question').forEach(function(item) {
 
 
 //faq ends
+
+// code for scroll do not touch
+window.addEventListener(
+  "scroll",
+  () => {
+    document.body.style.setProperty(
+      "--scroll",
+      window.scrollY / (document.body.offsetHeight - window.innerHeight)
+    );
+  },
+  false
+);
+
+// do not touch ends
+

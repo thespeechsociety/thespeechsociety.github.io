@@ -1150,24 +1150,24 @@ section {
 
   animation-iteration-count: 1;
   animation-fill-mode: both;
+
 }
 
 @keyframes slideAnimation {
   0% {
-    background-position: 0% 39%;
+    background-position: 0% 40%;
   }
   80%{
-    background-position: 0% 39%;
+    background-position: 0% 40%;
   } 
   /*change values between 0% and 100% to speed up animation*/
   95%{
-    background-position: 100% 39%;
+    background-position: 100% 40%;
   }
   100% {
-    background-position: 100% 39%;
+    background-position: 100% 40%;
   }
 }
-
 
 .stats-value {
   font-family: 'Anton', sans-serif;
