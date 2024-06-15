@@ -2697,6 +2697,12 @@ form {
     box-sizing: border-box;
     border-radius: 10px;
 }
+.form-title {
+  text-align: center;
+  font-size: larger;
+  color: black;
+  margin-bottom: 20px;
+}
 
 .form-group {
     display: flex;
