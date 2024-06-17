@@ -1,0 +1,44 @@
+body {
+    background: linear-gradient(to right, #000428, #004e92);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 20px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.member {
+    margin: 20px;
+    text-align: center;
+}
+
+.member img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.member h2 {
+    margin: 10px 0 5px 0;
+}
+
+.member p {
+    margin: 0;
+}
