@@ -1769,6 +1769,24 @@ section {
 .team .member:hover .social {
   opacity: 1;
 }
+.button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff; /* Change this to your desired button color */
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+  background-color: #0056b3; /* Change this to your desired hover color */
+}
 
 /*--------------------------------------------------------------
 # Contact
