@@ -1770,6 +1770,103 @@ section {
   opacity: 1;
 }
 
+/* T E A M   B U T T O N */
+
+.button-81 {
+  background-color: #fdeff2;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-81:hover {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .button-81 {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+  }
+}
+
+.team-arrow{
+  font-size: x-large;
+  vertical-align: middle;
+}
+
+/*--------------------------------------------------------------
+# team-info
+--------------------------------------------------------------*/
+.team-info {
+  padding-top: 20px;
+}
+
+.team-info .icon-box {
+  /* display: flex; */
+  align-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: ease-in-out 0.3s;
+  box-shadow: 2px 0 35px 0 rgba(68, 88, 144, 0.12);
+}
+
+.team-info .icon-box i {
+  font-size: 32px;
+  padding-right: 10px;
+  line-height: 1;
+}
+
+.team-info .icon-box h3 {
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+}
+
+.team-info .icon-box h2 {
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+}
+
+
+.team-info .icon-box h3 a {
+  color: #493c3e;
+  transition: ease-in-out 0.3s;
+}
+
+.team-info .icon-box:hover a {
+  color: #606060;
+}
+
+.team-mem{
+  border-radius: 50%;
+  max-width: 100%;
+  padding: 1.5rem;
+}
+.mem-img{
+  margin: auto;
+  align-items: center;
+  align-content: center;
+}
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
