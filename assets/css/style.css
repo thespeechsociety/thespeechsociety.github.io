@@ -2869,10 +2869,6 @@ form button:hover {
         padding: 15px; 
     }
 
-    section, form {
-        width: calc(100% - 20px); 
-    }
-
     form{
       box-shadow: none;
     }
