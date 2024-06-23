@@ -1889,6 +1889,9 @@ section {
   width: 100%;
   background: #fff;
 }
+.contact-details{
+  padding-bottom:2.5rem ;
+}
 
 .contact .info i {
   font-size: 20px;
@@ -2802,43 +2805,42 @@ section {
 /*--------------------------------------------------------------
 # Contact Us Form
 --------------------------------------------------------------*/
-
-form {
-    margin: 20px auto;
-    padding: 20px;
-    width: 100%;
-    max-width: 500px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    background: #fff;
-    box-sizing: border-box;
-    border-radius: 10px;
+.form-container{
+  align-items: center;
+  align-self: center;
 }
 .form-title {
   text-align: center;
-  font-size: larger;
-  color: black;
   margin-bottom: 20px;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
+}
+
+form {
+  padding: 2.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display:grid
 }
 
 .form-group {
-    display: flex;
     flex-direction: column;
-    align-items: flex-start;
     margin-bottom: 15px;
+
 }
 
 .form-group label {
     margin-bottom: 5px;
     color: #333; 
+    text-align: left;
 }
 
 form input[type="text"], form input[type="email"], form textarea, form button {
-    width: 90%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 5px 0; 
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 form button {
@@ -2848,10 +2850,12 @@ form button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
+    width: 15rem;
+    align-self: center;
 }
 
 form button:hover {
-    background-image: linear-gradient(to right, #A9A9A9, #848884);
+    background-image: linear-gradient(to right, #949494, #000000);
 }
 
 @media only screen and (max-width: 768px) {
@@ -2867,5 +2871,9 @@ form button:hover {
 
     section, form {
         width: calc(100% - 20px); 
+    }
+
+    form{
+      box-shadow: none;
     }
   }
