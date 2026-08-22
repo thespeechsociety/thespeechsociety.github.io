@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { teamMembers } from '../data/team';
+
+const categories = ["All", "Leadership & Faculty", "Core Team", "Heads", "Student Coordinators", "Past Team"];
+---
+
+<Layout
+  title="Team Members | The Speech Society (TSS)"
+  description="Meet the passionate leaders, heads, student coordinators, debaters, speakers, writers, and organizers behind The Speech Society at UEM Jaipur."
+>
+  <div class="pt-32 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Page Header -->
+    <div class="max-w-3xl mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold uppercase tracking-wider mb-4">
+        People
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-gray-900 tracking-tight leading-tight">
+        Our Hardworking Team
+      </h1>
+      <p class="mt-3 text-base text-gray-600">
+        The extraordinarily motivated minds behind The Speech Society (#teamtss) driving communication excellence across departments.
+      </p>
+    </div>
+
+    <!-- Filters & Search -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+      
+      <!-- Category Tabs -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="team-category-filters">
+        {categories.map((cat, index) => (
+          <button
+            type="button"
+            data-category={cat}
+            class={`team-filter-btn px-4 py-2 rounded-xl text-xs font-medium whitespace-nowrap transition-all duration-200 ${
+              index === 0
+                ? 'bg-gray-900 text-white font-semibold shadow-xs'
+                : 'bg-white text-gray-600 border border-gray-200 hover:text-gray-900 hover:border-gray-300 shadow-xs'
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <!-- Search Input -->
+      <div class="relative w-full md:w-72">
+        <input
+          type="text"
+          id="team-search-input"
+          placeholder="Search by name or designation..."
+          class="w-full pl-10 pr-4 py-2 rounded-xl bg-white border border-gray-200 text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all shadow-xs"
+        />
+        <svg class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+
+    </div>
+
+    <!-- Team Members Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6" id="team-grid">
+      {teamMembers.map((member) => (
+        <div
+          data-category={member.category}
+          data-name={member.name.toLowerCase()}
+          data-role={member.role.toLowerCase()}
+          class="team-card group p-4 rounded-2xl bg-white border border-gray-200 shadow-xs hover:border-brand-500/40 hover:shadow-md hover:bg-gray-50/40 transition-all duration-300 flex flex-col items-center text-center"
+        >
+          <!-- Member Avatar -->
+          <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden mb-4 border border-gray-200 bg-gray-100 relative group-hover:scale-105 transition-transform duration-300">
+            <img
+              src={member.image}
+              alt={member.name}
+              loading="lazy"
+              class="w-full h-full object-cover object-top"
+              onerror="this.src='/assets/img/logo.png'"
+            />
+          </div>
+
+          <!-- Name & Role -->
+          <h3 class="font-display font-bold text-sm sm:text-base text-gray-900 tracking-tight mb-1 group-hover:text-brand-600 transition-colors line-clamp-1">
+            {member.name}
+          </h3>
+
+          <p class="text-[11px] sm:text-xs text-brand-600 font-medium leading-snug line-clamp-2">
+            {member.role}
+          </p>
+
+          <span class="mt-3 px-2 py-0.5 rounded-md bg-gray-50 border border-gray-200 text-[9px] text-gray-600 tracking-wide uppercase">
+            {member.category}
+          </span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Empty State -->
+    <div id="no-team-found" class="hidden text-center py-20">
+      <p class="text-gray-500 text-sm">No team members match your criteria.</p>
+    </div>
+
+  </div>
+</Layout>
+
+<script>
+  const filterButtons = document.querySelectorAll('.team-filter-btn');
+  const searchInput = document.getElementById('team-search-input') as HTMLInputElement;
+  const cards = document.querySelectorAll('.team-card');
+  const noFound = document.getElementById('no-team-found');
+
+  let currentCategory = 'All';
+  let searchQuery = '';
+
+  const applyFilters = () => {
+    let visibleCount = 0;
+    cards.forEach(card => {
+      const category = card.getAttribute('data-category');
+      const name = card.getAttribute('data-name') || '';
+      const role = card.getAttribute('data-role') || '';
+
+      const matchCategory = currentCategory === 'All' || category === currentCategory;
+      const matchSearch = !searchQuery || name.includes(searchQuery) || role.includes(searchQuery);
+
+      if (matchCategory && matchSearch) {
+        (card as HTMLElement).style.display = 'flex';
+        visibleCount++;
+      } else {
+        (card as HTMLElement).style.display = 'none';
+      }
+    });
+
+    if (noFound) {
+      noFound.classList.toggle('hidden', visibleCount > 0);
+    }
+  };
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentCategory = btn.getAttribute('data-category') || 'All';
+
+      filterButtons.forEach(b => {
+        b.classList.remove('bg-gray-900', 'text-white', 'font-semibold');
+        b.classList.add('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+      });
+      btn.classList.remove('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+      btn.classList.add('bg-gray-900', 'text-white', 'font-semibold');
+
+      applyFilters();
+    });
+  });
+
+  searchInput?.addEventListener('input', (e) => {
+    searchQuery = (e.target as HTMLInputElement).value.toLowerCase().trim();
+    applyFilters();
+  });
+</script>

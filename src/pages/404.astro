@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 - Page Not Found | The Speech Society">
+  <div class="min-h-[70vh] flex items-center justify-center pt-32 pb-24 px-4">
+    <div class="text-center max-w-md mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold uppercase tracking-wider mb-6">
+        Error 404
+      </div>
+
+      <h1 class="text-6xl sm:text-7xl font-display font-extrabold text-gray-900 tracking-tight mb-4">
+        Lost in Thought?
+      </h1>
+
+      <p class="text-sm text-gray-600 leading-relaxed mb-8">
+        The page you are looking for might have been moved, renamed, or no longer exists. Let's get you back on stage.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="/"
+          class="px-6 py-3 rounded-xl text-sm font-semibold bg-gray-900 text-white hover:bg-gray-800 transition-colors shadow-md"
+        >
+          Back to Home
+        </a>
+
+        <a
+          href="/#contact"
+          class="px-6 py-3 rounded-xl text-sm font-semibold bg-white border border-gray-200 text-gray-800 hover:text-black hover:border-brand-400 hover:bg-gray-50 transition-colors shadow-sm"
+        >
+          Contact Support
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

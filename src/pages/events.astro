@@ -1,0 +1,177 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { eventsData } from '../data/events';
+
+const categories = ["All", ...Array.from(new Set(eventsData.map(e => e.category)))];
+---
+
+<Layout
+  title="Events Archive | The Speech Society (TSS)"
+  description="Explore the complete timeline of hackathons, debates, tech talks, and litfests organized by The Speech Society at UEM Jaipur."
+>
+  <div class="pt-32 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Page Header -->
+    <div class="max-w-3xl mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold uppercase tracking-wider mb-4">
+        Archive
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-gray-900 tracking-tight leading-tight">
+        All Events & Gatherings
+      </h1>
+      <p class="mt-3 text-base text-gray-600">
+        Browse our comprehensive history of student competitions, guest lectures, litfests, and collaborative symposiums.
+      </p>
+    </div>
+
+    <!-- Filters & Search Bar -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+      <!-- Filter Tabs -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="event-page-filters">
+        {categories.map((cat, index) => (
+          <button
+            type="button"
+            data-filter={cat}
+            class={`event-page-filter-btn px-4 py-2 rounded-xl text-xs font-medium whitespace-nowrap transition-all duration-200 ${
+              index === 0
+                ? 'bg-gray-900 text-white font-semibold shadow-xs'
+                : 'bg-white text-gray-600 border border-gray-200 hover:text-gray-900 hover:border-gray-300 shadow-xs'
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <!-- Live Search Input -->
+      <div class="relative w-full md:w-72">
+        <input
+          type="text"
+          id="event-search-input"
+          placeholder="Search events by title or keyword..."
+          class="w-full pl-10 pr-4 py-2 rounded-xl bg-white border border-gray-200 text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all shadow-xs"
+        />
+        <svg class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Events Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="event-cards-container">
+      {eventsData.map((event) => (
+        <div
+          data-category={event.category}
+          data-title={event.title.toLowerCase()}
+          data-desc={event.description.toLowerCase()}
+          class="event-archive-card group rounded-3xl bg-white border border-gray-200 shadow-xs overflow-hidden flex flex-col justify-between hover:border-brand-500/40 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+        >
+          <div>
+            <!-- Image Header -->
+            <div class="relative aspect-[16/10] overflow-hidden bg-gray-100">
+              <img
+                src={event.image}
+                alt={event.title}
+                loading="lazy"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent opacity-80"></div>
+              
+              <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-gray-200 text-[11px] font-semibold text-gray-800 shadow-sm">
+                {event.date}
+              </div>
+
+              <div class="absolute bottom-3 left-4 px-2.5 py-0.5 rounded-md bg-brand-600 text-[10px] font-semibold text-white tracking-wide uppercase">
+                {event.category}
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6">
+              <h3 class="text-xl font-display font-bold text-gray-900 tracking-tight mb-3 group-hover:text-brand-600 transition-colors">
+                {event.title}
+              </h3>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                {event.description}
+              </p>
+            </div>
+          </div>
+
+          <!-- Card Footer -->
+          <div class="px-6 pb-6 pt-3 border-t border-gray-100 mt-auto">
+            <a
+              href={event.galleryUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-xs font-semibold text-brand-600 hover:text-brand-700 transition-colors group/link"
+            >
+              <span>Pictures & Videos Library</span>
+              <svg class="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Empty State -->
+    <div id="no-events-found" class="hidden text-center py-20">
+      <p class="text-gray-500 text-sm">No events match your selected filters or search query.</p>
+    </div>
+
+  </div>
+</Layout>
+
+<script>
+  const filterBtns = document.querySelectorAll('.event-page-filter-btn');
+  const searchInput = document.getElementById('event-search-input') as HTMLInputElement;
+  const cards = document.querySelectorAll('.event-archive-card');
+  const noFound = document.getElementById('no-events-found');
+
+  let currentCategory = 'All';
+  let searchQuery = '';
+
+  const applyFilters = () => {
+    let visibleCount = 0;
+    cards.forEach(card => {
+      const category = card.getAttribute('data-category');
+      const title = card.getAttribute('data-title') || '';
+      const desc = card.getAttribute('data-desc') || '';
+
+      const matchCategory = currentCategory === 'All' || category === currentCategory;
+      const matchSearch = !searchQuery || title.includes(searchQuery) || desc.includes(searchQuery);
+
+      if (matchCategory && matchSearch) {
+        (card as HTMLElement).style.display = 'flex';
+        visibleCount++;
+      } else {
+        (card as HTMLElement).style.display = 'none';
+      }
+    });
+
+    if (noFound) {
+      noFound.classList.toggle('hidden', visibleCount > 0);
+    }
+  };
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentCategory = btn.getAttribute('data-filter') || 'All';
+
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-gray-900', 'text-white', 'font-semibold');
+        b.classList.add('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+      });
+      btn.classList.remove('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+      btn.classList.add('bg-gray-900', 'text-white', 'font-semibold');
+
+      applyFilters();
+    });
+  });
+
+  searchInput?.addEventListener('input', (e) => {
+    searchQuery = (e.target as HTMLInputElement).value.toLowerCase().trim();
+    applyFilters();
+  });
+</script>

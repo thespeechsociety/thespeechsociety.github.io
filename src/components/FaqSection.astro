@@ -1,0 +1,46 @@
+---
+import { faqData } from '../data/faqs';
+---
+
+<section id="faq" class="py-20 relative z-10 border-t border-gray-200">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold uppercase tracking-wider mb-3">
+        Got Questions?
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-gray-900 tracking-tight">
+        Frequently Asked Questions
+      </h2>
+      <p class="mt-3 text-base text-gray-600">
+        Everything you need to know about joining, participating, and growing with The Speech Society.
+      </p>
+    </div>
+
+    <!-- Accordion List -->
+    <div class="space-y-4">
+      {faqData.map((faq, index) => (
+        <details class="faq-item group rounded-2xl bg-white border border-gray-200 shadow-xs transition-all duration-200 open:border-brand-500/40 open:shadow-md overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none select-none text-left">
+            <span class="text-base sm:text-lg font-display font-bold text-gray-900 group-hover:text-brand-600 transition-colors pr-4">
+              {faq.question}
+            </span>
+            <div class="w-8 h-8 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-gray-500 group-hover:text-gray-900 shrink-0 group-open:rotate-180 transition-transform duration-300">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </summary>
+
+          <div class="px-6 pb-6 pt-2 text-sm text-gray-600 leading-relaxed border-t border-gray-100 space-y-3">
+            {faq.answer.map((p) => (
+              <p>{p}</p>
+            ))}
+          </div>
+        </details>
+      ))}
+    </div>
+
+  </div>
+</section>

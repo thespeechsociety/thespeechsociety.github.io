@@ -1,0 +1,120 @@
+---
+import { societyInfo } from '../data/society';
+import { Image } from 'astro:assets';
+import elementOne from '../assets/img/elementone.png';
+---
+
+<section id="about" class="py-20 relative z-10 border-t border-gray-200 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    
+    <!-- Section Header with Right-Side Graphic Element -->
+    <div class="relative flex flex-col md:flex-row md:items-center justify-between gap-6 mb-16">
+      <div class="max-w-2xl relative z-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold uppercase tracking-wider mb-3">
+          About Us
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-gray-900 tracking-tight leading-tight">
+          Where eloquence meets innovation.
+        </h2>
+        <p class="mt-3 text-base text-gray-600">
+          Discover the origins and mission behind The Speech Society and our parent institution, UEM Jaipur.
+        </p>
+      </div>
+
+      <!-- Right Side Graphic Element (elementone.png) -->
+      <div class="absolute -right-4 sm:right-0 -top-10 sm:-top-14 md:-top-16 w-28 sm:w-44 md:w-56 lg:w-64 xl:w-72 pointer-events-none select-none z-0 sm:z-10 animate-float-slow">
+        <Image
+          src={elementOne}
+          alt="The Speech Society 3D Graphic"
+          class="w-full h-auto object-contain drop-shadow-xl"
+        />
+      </div>
+    </div>
+
+    <!-- Grid: TSS & UEMJ -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Card 1: The Speech Society -->
+      <div class="p-8 sm:p-10 rounded-3xl bg-white border border-gray-200 shadow-xs relative overflow-hidden flex flex-col justify-between hover:border-brand-500/40 hover:shadow-md transition-all duration-300">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="w-8 h-8 rounded-xl bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-600 font-bold text-sm">
+              01
+            </span>
+            <h3 class="text-2xl font-display font-bold text-gray-900 tracking-tight">The Speech Society</h3>
+          </div>
+
+          <div class="space-y-4 text-sm text-gray-600 leading-relaxed">
+            {societyInfo.about.society.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-gray-100 flex flex-wrap items-center gap-2">
+          <span class="px-3 py-1 rounded-lg bg-gray-50 border border-gray-200 text-xs text-gray-700 font-medium">
+            Est. Batch 2022
+          </span>
+          <span class="px-3 py-1 rounded-lg bg-gray-50 border border-gray-200 text-xs text-gray-700 font-medium">
+            Motto: Think. Script. Speak.
+          </span>
+          <span class="px-3 py-1 rounded-lg bg-gray-50 border border-gray-200 text-xs text-gray-700 font-medium">
+            Toastmasters Integrated
+          </span>
+        </div>
+      </div>
+
+      <!-- Card 2: UEM Jaipur -->
+      <div class="p-8 sm:p-10 rounded-3xl bg-white border border-gray-200 shadow-xs relative overflow-hidden flex flex-col justify-between hover:border-purple-500/40 hover:shadow-md transition-all duration-300">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="w-8 h-8 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 font-bold text-sm">
+              02
+            </span>
+            <h3 class="text-2xl font-display font-bold text-gray-900 tracking-tight">UEM Jaipur</h3>
+          </div>
+
+          <div class="space-y-4 text-sm text-gray-600 leading-relaxed">
+            {societyInfo.about.university.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-gray-100 flex flex-wrap items-center gap-2">
+          <span class="px-3 py-1 rounded-lg bg-gray-50 border border-gray-200 text-xs text-gray-700 font-medium">
+            Highest Offer: ₹72 LPA
+          </span>
+          <span class="px-3 py-1 rounded-lg bg-gray-50 border border-gray-200 text-xs text-gray-700 font-medium">
+            Ranked 1st in North India
+          </span>
+          <span class="px-3 py-1 rounded-lg bg-gray-50 border border-gray-200 text-xs text-gray-700 font-medium">
+            32-Acre Modern Campus
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @keyframes floatSlow {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(1.5deg);
+    }
+  }
+
+  .animate-float-slow {
+    animation: floatSlow 6s ease-in-out infinite;
+    will-change: transform;
+  }
+</style>
