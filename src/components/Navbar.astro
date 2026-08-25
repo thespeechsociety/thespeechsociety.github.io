@@ -3,24 +3,22 @@ import { societyInfo } from '../data/society';
 import { Image } from 'astro:assets';
 import mainLogo from '../assets/img/main logo.png';
 
-const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
-
 const navLinks = [
-  { href: `${base}#about`, label: 'About' },
-  { href: `${base}#events`, label: 'Events' },
-  { href: `${base}#activities`, label: 'Activities' },
-  { href: `${base}blog`, label: 'Blogs' },
-  { href: `${base}team`, label: 'Team' },
-  { href: `${base}#testimonials`, label: 'Testimonials' },
-  { href: `${base}#faq`, label: 'FAQ' },
-  { href: `${base}#contact`, label: 'Contact' },
+  { href: '/#about', label: 'About' },
+  { href: '/#events', label: 'Events' },
+  { href: '/#activities', label: 'Activities' },
+  { href: '/blog', label: 'Blogs' },
+  { href: '/team', label: 'Team' },
+  { href: '/#testimonials', label: 'Testimonials' },
+  { href: '/#faq', label: 'FAQ' },
+  { href: '/#contact', label: 'Contact' },
 ];
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-4 sm:px-8" id="site-header">
   <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2.5 rounded-2xl bg-white/85 backdrop-blur-xl border border-gray-200 shadow-md">
     <!-- Logo -->
-    <a href={base} class="flex items-center group py-0.5" aria-label="The Speech Society">
+    <a href="/" class="flex items-center group py-0.5" aria-label="The Speech Society">
       <Image
         src={mainLogo}
         alt="The Speech Society"
@@ -44,7 +42,7 @@ const navLinks = [
     <!-- Desktop Actions -->
     <div class="hidden sm:flex items-center gap-3">
       <a
-        href={`${base}induction`}
+        href="/induction"
         class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-gray-900 text-white hover:bg-gray-800 transition-all duration-200 shadow-xs"
       >
         <span>Induction 2026</span>
@@ -86,7 +84,7 @@ const navLinks = [
       ))}
       <div class="pt-3 mt-2 border-t border-gray-200 flex flex-col gap-2">
         <a
-          href={`${base}induction`}
+          href="/induction"
           class="w-full text-center px-4 py-3 rounded-xl text-base font-semibold bg-gray-900 text-white hover:bg-gray-800 transition-colors"
         >
           Induction Event 2026

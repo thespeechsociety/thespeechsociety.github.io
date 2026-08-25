@@ -3,7 +3,6 @@ import { societyInfo } from '../data/society';
 import { Image } from 'astro:assets';
 import mainLogo from '../assets/img/main logo.png';
 
-const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const currentYear = new Date().getFullYear();
 ---
 
@@ -13,7 +12,7 @@ const currentYear = new Date().getFullYear();
       
       <!-- Col 1: Brand & Tagline -->
       <div class="lg:col-span-2 space-y-4">
-        <a href={base} class="inline-block" aria-label="The Speech Society">
+        <a href="/" class="inline-block" aria-label="The Speech Society">
           <Image
             src={mainLogo}
             alt="The Speech Society Logo"
@@ -92,11 +91,11 @@ const currentYear = new Date().getFullYear();
       <div class="space-y-3">
         <h4 class="text-xs font-semibold text-gray-900 uppercase tracking-wider">Navigation</h4>
         <ul class="space-y-2 text-sm">
-          <li><a href={`${base}#about`} class="text-gray-600 hover:text-gray-900 transition-colors">About TSS</a></li>
-          <li><a href={`${base}#events`} class="text-gray-600 hover:text-gray-900 transition-colors">Past & Upcoming Events</a></li>
-          <li><a href={`${base}#activities`} class="text-gray-600 hover:text-gray-900 transition-colors">Society Activities</a></li>
-          <li><a href={`${base}blog`} class="text-gray-600 hover:text-gray-900 transition-colors">Official Blogs</a></li>
-          <li><a href={`${base}team`} class="text-gray-600 hover:text-gray-900 transition-colors">Team Members</a></li>
+          <li><a href="/#about" class="text-gray-600 hover:text-gray-900 transition-colors">About TSS</a></li>
+          <li><a href="/#events" class="text-gray-600 hover:text-gray-900 transition-colors">Past & Upcoming Events</a></li>
+          <li><a href="/#activities" class="text-gray-600 hover:text-gray-900 transition-colors">Society Activities</a></li>
+          <li><a href="/blog" class="text-gray-600 hover:text-gray-900 transition-colors">Official Blogs</a></li>
+          <li><a href="/team" class="text-gray-600 hover:text-gray-900 transition-colors">Team Members</a></li>
         </ul>
       </div>
 
@@ -120,12 +119,12 @@ const currentYear = new Date().getFullYear();
             </a>
           </li>
           <li>
-            <a href={`${base}#testimonials`} class="text-gray-600 hover:text-gray-900 transition-colors">
+            <a href="/#testimonials" class="text-gray-600 hover:text-gray-900 transition-colors">
               Guest Testimonials
             </a>
           </li>
           <li>
-            <a href={`${base}#faq`} class="text-gray-600 hover:text-gray-900 transition-colors">
+            <a href="/#faq" class="text-gray-600 hover:text-gray-900 transition-colors">
               Frequently Asked Questions
             </a>
           </li>
@@ -152,7 +151,7 @@ const currentYear = new Date().getFullYear();
       <p>© {currentYear} The Speech Society (TSS), UEM Jaipur. All rights reserved.</p>
       <div class="flex items-center gap-4">
         <a
-          href={`${base}webdev`}
+          href="/webdev"
           class="hover:text-brand-600 transition-colors font-medium underline underline-offset-4"
         >
           Designed by Web Dev Team & Contributors at TSS, UEMJ

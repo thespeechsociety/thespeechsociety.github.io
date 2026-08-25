@@ -5,8 +5,7 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react()],
-  site: 'https://sujoymoulick.github.io',
-  base: '/thespeechsociety',
+  site: 'https://thespeechsociety.github.io',
   server: {
     host: true,
     port: 4321,
