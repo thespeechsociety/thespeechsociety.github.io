@@ -16,7 +16,7 @@ export const eventsData: EventItem[] = [
     date: "Upcoming (1:00 PM – 2:40 PM)",
     category: "Induction",
     description: "The flagship induction ceremony of The Speech Society (#teamtss). Featuring twin tracks: Technical Next-Gen Web & Prompt Engineering Workshop alongside Non-Technical Group Discussion & Debate Arena.",
-    image: "/assets/img/lnduction2026.png",
+    image: "/assets/img/induction2026.png",
     galleryUrl: "/induction",
     featured: true
   },

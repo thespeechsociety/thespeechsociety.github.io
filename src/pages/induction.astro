@@ -4,6 +4,7 @@ import { inductionEventData } from '../data/induction';
 import { Image } from 'astro:assets';
 import elementOne from '../assets/img/elementone.png';
 import inductionHeroImg from '../assets/img/lnduction2026.png';
+import GigPilotBanner from '../components/GigPilotBanner.astro';
 
 const nonTechTrack = inductionEventData.tracks.find(t => t.id === "non-technical")!;
 const techTrack = inductionEventData.tracks.find(t => t.id === "technical")!;
@@ -15,6 +16,9 @@ const techTrack = inductionEventData.tracks.find(t => t.id === "technical")!;
 >
   <div class="pt-36 sm:pt-44 md:pt-48 pb-28 sm:pb-36 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
+    <!-- Announcement Banner -->
+    <GigPilotBanner />
+
     <!-- Hero Banner with Element One Graphic -->
     <div class="relative rounded-3xl bg-gradient-to-br from-blue-50/70 via-white to-purple-50/60 border border-gray-200 p-8 sm:p-12 lg:p-16 overflow-hidden shadow-lg mb-24 sm:mb-32">
       <div class="absolute -top-24 -left-24 w-80 h-80 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
